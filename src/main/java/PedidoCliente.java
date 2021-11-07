@@ -11,7 +11,7 @@ public class PedidoCliente {
         return situacao;
     }
     public void abrirPedido(){
-        this.situacao = "Pedido Aberto";
+        this.situacao = "Pedido aberto";
     }
     public void fecharPedido(){
         this.situacao = "Pedido fechado";

@@ -7,9 +7,9 @@ public class FecharPedido implements Pedido{
     }
 
     public void confirmaPedido(){
-        this.pedidoCliente.abrirPedido();
+        this.pedidoCliente.fecharPedido();
     }
     public void cancelarPedido(){
-        this.pedidoCliente.fecharPedido();
+        this.pedidoCliente.abrirPedido();
     }
 }

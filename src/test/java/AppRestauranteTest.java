@@ -19,7 +19,7 @@ class AppRestauranteTest {
             Pedido abertura = new AberturaPedido(pedido);
             app.realizarPedido(abertura);
 
-            assertEquals("Pedido Aberto", pedido.getSituacao());
+            assertEquals("Pedido aberto", pedido.getSituacao());
         }
 
         @Test
@@ -28,6 +28,19 @@ class AppRestauranteTest {
             app.realizarPedido(fechar);
 
             assertEquals("Pedido fechado", pedido.getSituacao());
+        }
+
+        @Test
+        void  deveCancelarFechamentoPedido(){
+            Pedido aberturaPedido = new AberturaPedido(pedido);
+            Pedido fechadoPedido = new FecharPedido(pedido);
+
+            app.realizarPedido(aberturaPedido);
+            app.realizarPedido(fechadoPedido);
+
+            app.confirmaUltimoPedido();
+
+            assertEquals("Pedido aberto", pedido.getSituacao());
         }
 
 
